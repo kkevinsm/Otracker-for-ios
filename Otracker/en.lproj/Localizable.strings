@@ -1,0 +1,148 @@
+
+"tab_summary" = "Summary";
+"tab_history" = "History";
+"tab_budget" = "Budget";
+"tab_bills" = "Bills";
+"tab_settings" = "Settings";
+
+// MARK: - Dashboard View
+
+"dashboard_title" = "Summary";
+"dashboard_no_category" = "No Category";
+"dashboard_category" = "Category";
+"dashboard_SelectedTimeRange" = "Selected Time Range";
+"dashboard_spending_for" = "Spending for %@";
+"dashboard_daily" = "Daily";
+"dashboard_weekly" = "Weekly";
+"dashboard_monthly" = "Monthly";
+"dashboard_trend_title" = "Spending Trend";
+"dashboard_vs_last_month" = "vs. Last Month";
+"dashboard_category_comparison" = "Category Comparison";
+"dashboard_this_month" = "This Month";
+"dashboard_last_month" = "Last Month";
+"dashboard_no_data" = "No Data";
+"dashboard_amount" = "Amount";
+
+// MARK: - AddBill View
+
+"add_bill_title" = "Add Bill";
+"add_bill_section_header" = "Bill Details";
+"add_bill_name_placeholder" = "Bill Name (e.g., Spotify Premium)";
+"add_bill_amount_placeholder" = "Bill Amount";
+"add_bill_due_date_label" = "Due Date";
+"add_bill_due_date_day" = "day"; // untuk tanggal 1
+"add_bill_due_date_days" = "days"; // untuk tanggal > 1
+"add_bill_cancel_button" = "Cancel";
+"add_bill_save_button" = "Save";
+
+// MARK: - Add Budget View
+"add_budget_title" = "Add Budget";
+"add_budget_section_header" = "Monthly Budget Details";
+"add_budget_picker_label" = "Select Category";
+"add_budget_picker_placeholder" = "Select a category...";
+"add_budget_amount_placeholder" = "Budget Limit";
+"add_budget_cancel_button" = "Cancel";
+"add_budget_save_button" = "Save";
+
+// MARK: - Add Transaction View
+"add_transaction_title" = "Add Transaction";
+"edit_transaction_title" = "Edit Transaction";
+"auto_input_section_header" = "Automatic Input";
+"scan_receipt_button" = "Select Receipt from Gallery";
+"analyzing_text" = "Analyzing...";
+"transaction_details_section_header" = "Transaction Details";
+"description_placeholder" = "Description (e.g., Coffee)";
+"amount_placeholder" = "Amount";
+"date_label" = "Date";
+"category_source_section_header" = "Category & Source";
+"category_picker_label" = "Category";
+"category_picker_placeholder" = "Select Category";
+"subcategory_picker_label" = "Sub-category";
+"subcategory_picker_placeholder" = "Select Sub-category";
+"source_picker_label" = "Source of Fund";
+"source_picker_placeholder" = "Select Source of Fund";
+"cancel_button" = "Cancel";
+"save_button" = "Save";
+
+// Error Messages
+"error_api_key_not_found" = "API Key not found.";
+"error_failed_to_analyze" = "Failed to analyze: %@";
+"error_failed_to_load_image" = "Failed to load image.";
+
+// MARK: - Bills View
+"bills_view_title" = "Bills & Subscriptions";
+"bills_view_empty_title" = "No Bills Yet";
+"bills_view_empty_description" = "Add your first installment or subscription.";
+"bills_view_due_date_format" = "Due on the %d of every month";
+"bills_view_status_paid" = "Paid";
+"bills_view_pay_button" = "Pay";
+"bills_view_payment_description_format" = "Payment: %@";
+"bills_view_default_category" = "Bills";
+"bills_view_default_source" = "Automatic";
+
+"budget_view_title" = "Monthly Budget";
+"budget_view_empty_title" = "No Budgets Yet";
+"budget_view_empty_description" = "Set your first budget to start tracking spending by category.";
+"budget_row_no_category" = "No Category";
+"budget_row_spent" = "Spent: %@"; // %@ akan diganti dengan jumlah
+"budget_row_remaining" = "Remaining: %@";
+
+// MARK: - Category Management View
+"category_management_title" = "Categories";
+"category_management_add_subcategory_button" = "Add Sub-category";
+"category_management_alert_title" = "Add New Category";
+"category_management_alert_placeholder" = "Category Name";
+"category_management_alert_cancel_button" = "Cancel";
+"category_management_alert_save_button" = "Save";
+
+// MARK: - Filter View
+"filter_view_title" = "Filter Transactions";
+"filter_view_date_range_header" = "Date Range";
+"filter_view_from_date_label" = "From Date";
+"filter_view_to_date_label" = "To Date";
+"filter_view_other_filters_header" = "Other Filters";
+"filter_view_category_picker_label" = "Category";
+"filter_view_all_categories_option" = "All Categories";
+"filter_view_source_picker_label" = "Source of Fund";
+"filter_view_all_sources_option" = "All Sources";
+"filter_view_reset_button" = "Reset";
+"filter_view_done_button" = "Done";
+
+// MARK: - Settings View
+"tab_settings" = "Settings";
+"settings_manage_categories" = "Manage Categories";
+"settings_manage_sources" = "Manage Sources of Fund";
+
+// MARK: - Source of Fund Management View
+"source_management_title" = "Sources of Fund";
+"source_management_alert_title" = "Add New Source of Fund";
+"source_management_alert_placeholder" = "Source Name (e.g., Bank Mandiri)";
+"source_management_alert_message" = "Make sure the source name does not already exist.";
+"source_management_alert_cancel_button" = "Cancel";
+"source_management_alert_save_button" = "Save";
+
+// MARK: - Transaction History View
+"history_view_title" = "Transaction History";
+"history_view_search_prompt" = "Search description...";
+"history_view_filter_button" = "Filter";
+"history_view_manual_input_menu" = "Manual Input";
+"history_view_voice_input_menu" = "Voice Input";
+
+// MARK: - Filtered Transaction List
+"filtered_list_no_category" = "No Category";
+"filtered_list_edit_action" = "Edit Transaction";
+"filtered_list_delete_action" = "Delete Transaction";
+"filtered_list_empty_title" = "No Transactions";
+"filtered_list_empty_description" = "Try changing your filter or search criteria.";
+
+// MARK: - Voice Input Overlay
+"voice_overlay_analyzing" = "Analyzing...";
+"voice_overlay_listening" = "Listening...";
+"voice_overlay_prompt" = "Say your transaction...\n(Example: Buy Coffee 25 thousand from GoPay)";
+"voice_overlay_done_button" = "Done";
+"voice_overlay_cancel_button" = "Cancel";
+
+
+
+
+

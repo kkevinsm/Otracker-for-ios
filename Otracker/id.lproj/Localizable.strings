@@ -1,0 +1,143 @@
+"tab_summary" = "Ringkasan";
+"tab_history" = "Riwayat";
+"tab_budget" = "Anggaran";
+"tab_bills" = "Tagihan";
+"tab_settings" = "Pengaturan";
+
+
+// MARK: - Dashboard View
+"dashboard_title" = "Ringkasan";
+"dashboard_no_category" = "Tanpa Kategori";
+"dashboard_category" = "Kategori";
+"dashboard_SelectedTimeRange" = "Pilih Rentang Waktu";
+"dashboard_spending_for" = "Pengeluaran %@";
+"dashboard_daily" = "Harian";
+"dashboard_weekly" = "Mingguan";
+"dashboard_monthly" = "Bulanan";
+"dashboard_trend_title" = "Tren Pengeluaran";
+"dashboard_vs_last_month" = "vs. Bulan Lalu";
+"dashboard_category_comparison" = "Perbandingan Kategori";
+"dashboard_this_month" = "Bulan Ini";
+"dashboard_last_month" = "Bulan Lalu";
+"dashboard_no_data" = "Tidak Ada Data";
+"dashboard_amount" = "Jumlah";
+
+
+// MARK - Add Bill View
+"add_bill_title" = "Tambah Tagihan";
+"add_bill_section_header" = "Detail Tagihan";
+"add_bill_name_placeholder" = "Nama Tagihan (e.g., Spotify Premium)";
+"add_bill_amount_placeholder" = "Jumlah Tagihan";
+"add_bill_due_date_label" = "Jatuh Tempo Tanggal";
+"add_bill_due_date_day" = "hari";
+"add_bill_due_date_days" = "hari";
+"add_bill_cancel_button" = "Batal";
+"add_bill_save_button" = "Simpan";
+
+// MARK: - Add Budget View
+"add_budget_title" = "Tambah Anggaran";
+"add_budget_section_header" = "Detail Anggaran Bulanan";
+"add_budget_picker_label" = "Pilih Kategori";
+"add_budget_picker_placeholder" = "Pilih sebuah kategori...";
+"add_budget_amount_placeholder" = "Batas Anggaran";
+"add_budget_cancel_button" = "Batal";
+"add_budget_save_button" = "Simpan";
+
+// MARK: - Add Transaction View
+"add_transaction_title" = "Tambah Transaksi";
+"edit_transaction_title" = "Edit Transaksi";
+"auto_input_section_header" = "Input Otomatis";
+"scan_receipt_button" = "Pilih Struk dari Galeri";
+"analyzing_text" = "Menganalisis...";
+"transaction_details_section_header" = "Detail Transaksi";
+"description_placeholder" = "Deskripsi (e.g., Kopi Susu)";
+"amount_placeholder" = "Jumlah";
+"date_label" = "Tanggal";
+"category_source_section_header" = "Kategori & Sumber";
+"category_picker_label" = "Kategori";
+"category_picker_placeholder" = "Pilih Kategori";
+"subcategory_picker_label" = "Sub-kategori";
+"subcategory_picker_placeholder" = "Pilih Sub-kategori";
+"source_picker_label" = "Sumber Dana";
+"source_picker_placeholder" = "Pilih Sumber Dana";
+"cancel_button" = "Batal";
+"save_button" = "Simpan";
+
+// Error Messages
+"error_api_key_not_found" = "API Key tidak ditemukan.";
+"error_failed_to_analyze" = "Gagal menganalisis: %@";
+"error_failed_to_load_image" = "Gagal memuat gambar.";
+
+// MARK: - Bills View
+"bills_view_title" = "Tagihan & Langganan";
+"bills_view_empty_title" = "Belum Ada Tagihan";
+"bills_view_empty_description" = "Tambahkan cicilan atau langganan pertama Anda.";
+"bills_view_due_date_format" = "Jatuh tempo tgl %d setiap bulan";
+"bills_view_status_paid" = "Lunas";
+"bills_view_pay_button" = "Bayar";
+"bills_view_payment_description_format" = "Pembayaran: %@";
+"bills_view_default_category" = "Tagihan";
+"bills_view_default_source" = "Otomatis";
+
+// MARK: - Budget View
+"budget_view_title" = "Anggaran Bulanan";
+"budget_view_empty_title" = "Belum Ada Anggaran";
+"budget_view_empty_description" = "Tetapkan anggaran pertama Anda untuk mulai melacak pengeluaran per kategori.";
+"budget_row_no_category" = "Tanpa Kategori";
+"budget_row_spent" = "Terpakai: %@";
+"budget_row_remaining" = "Sisa: %@";
+
+// MARK: - Category Management View
+"category_management_title" = "Kategori";
+"category_management_add_subcategory_button" = "Tambah Sub-kategori";
+"category_management_alert_title" = "Tambah Kategori Baru";
+"category_management_alert_placeholder" = "Nama Kategori";
+"category_management_alert_cancel_button" = "Batal";
+"category_management_alert_save_button" = "Simpan";
+
+// MARK: - Filter View
+"filter_view_title" = "Filter Transaksi";
+"filter_view_date_range_header" = "Rentang Tanggal";
+"filter_view_from_date_label" = "Dari Tanggal";
+"filter_view_to_date_label" = "Sampai Tanggal";
+"filter_view_other_filters_header" = "Filter Lainnya";
+"filter_view_category_picker_label" = "Kategori";
+"filter_view_all_categories_option" = "Semua Kategori";
+"filter_view_source_picker_label" = "Sumber Dana";
+"filter_view_all_sources_option" = "Semua Sumber";
+"filter_view_reset_button" = "Reset";
+"filter_view_done_button" = "Selesai";
+
+// MARK: - Settings View
+"tab_settings" = "Pengaturan";
+"settings_manage_categories" = "Kelola Kategori";
+"settings_manage_sources" = "Kelola Sumber Dana";
+
+// MARK: - Source of Fund Management View
+"source_management_title" = "Sumber Dana";
+"source_management_alert_title" = "Tambah Sumber Dana Baru";
+"source_management_alert_placeholder" = "Nama Sumber Dana (e.g., Bank Mandiri)";
+"source_management_alert_message" = "Pastikan nama sumber dana belum ada.";
+"source_management_alert_cancel_button" = "Batal";
+"source_management_alert_save_button" = "Simpan";
+
+// MARK: - Transaction History View
+"history_view_title" = "Riwayat Transaksi";
+"history_view_search_prompt" = "Cari deskripsi...";
+"history_view_filter_button" = "Filter";
+"history_view_manual_input_menu" = "Input Manual";
+"history_view_voice_input_menu" = "Input Suara";
+
+// MARK: - Filtered Transaction List
+"filtered_list_no_category" = "Tanpa Kategori";
+"filtered_list_edit_action" = "Edit Transaksi";
+"filtered_list_delete_action" = "Hapus Transaksi";
+"filtered_list_empty_title" = "Tidak Ada Transaksi";
+"filtered_list_empty_description" = "Coba ubah filter atau teks pencarian Anda.";
+
+// MARK: - Voice Input Overlay
+"voice_overlay_analyzing" = "Menganalisis...";
+"voice_overlay_listening" = "Mendengarkan...";
+"voice_overlay_prompt" = "Ucapkan transaksi Anda...\n(Contoh: Beli Kopi 25 ribu dari GoPay)";
+"voice_overlay_done_button" = "Selesai";
+"voice_overlay_cancel_button" = "Batal";
