@@ -158,41 +158,101 @@ struct AddTransactionView: View {
     }
 
     private func processSelectedPhoto(photoItem: PhotosPickerItem?) {
-        guard let item = photoItem else { return }
-        
-        isLoading = true
-        errorMessage = nil
-        
-        Task {
-            if let data = try? await item.loadTransferable(type: Data.self), let uiImage = UIImage(data: data) {
-                guard let geminiService = GeminiService() else {
-                    errorMessage = "error_api_key_not_found"
-                    isLoading = false
-                    return
-                }
-                
-                geminiService.analyzeReceipt(image: uiImage) { result in
-                    isLoading = false
-                    switch result {
-                    case .success(let info):
-                        self.description = info.merchant_name ?? ""
-                        self.amount = info.amount ?? 0.0
-                        
-                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd"
-                        if let dateString = info.transaction_date, let parsedDate = formatter.date(from: dateString) {
-                            self.date = parsedDate
-                        }
-                    case .failure(let error):
-                        let format = NSLocalizedString("error_failed_to_analyze", comment: "")
-                        errorMessage = String(format: format, error.localizedDescription)
+            guard let item = photoItem else { return }
+            
+            isLoading = true
+            errorMessage = nil
+            
+            Task {
+                if let data = try? await item.loadTransferable(type: Data.self), let uiImage = UIImage(data: data) {
+                    guard let geminiService = GeminiService() else {
+                        errorMessage = NSLocalizedString("error_api_key_not_found", comment: "")
+                        isLoading = false
+                        return
                     }
-                }
-            } else {
-                isLoading = false
-                errorMessage = "error_failed_to_load_image"
+                    
+                    geminiService.analyzeReceipt(image: uiImage) { result in
+                        isLoading = false
+                        switch result {
+                        case .success(let info):
+                            self.description = info.merchant_name ?? ""
+                            self.amount = info.amount ?? 0.0
+                            
+                            // --- LOGIKA BARU YANG LEBIH TANGGUH UNTUK TANGGAL ---
+                            self.date = parseAndCorrectDate(from: info.transaction_date)
+                            
+                        case .failure(let error):
+                            let format = NSLocalizedString("error_failed_to_analyze", comment: "")
+                            errorMessage = String(format: format, error.localizedDescription)
+                        }
+                    }
+                } else {
+                    errorMessage = NSLocalizedString("error_failed_to_load_image", comment: "")
+                    isLoading = false
             }
         }
     }
-    
+    // --- FUNGSI HELPER BARU UNTUK MEM-PARSE DAN MEMPERBAIKI TANGGAL ---
+        private func parseAndCorrectDate(from dateString: String?) -> Date {
+            // Default ke hari ini jika tidak ada string tanggal
+            guard let dateString = dateString, !dateString.isEmpty else {
+                return .now
+            }
+            
+            let calendar = Calendar.current
+            let currentYear = calendar.component(.year, from: Date())
+            
+            let formatter = DateFormatter()
+            var parsedDate: Date?
+
+            // 1. Coba format paling lengkap dulu: YYYY-MM-DD
+            formatter.dateFormat = "yyyy-MM-dd"
+            if let date = formatter.date(from: dateString) {
+                parsedDate = date
+            }
+            
+            // 2. Jika gagal, coba format umum struk: DD/MM/YYYY
+            if parsedDate == nil {
+                formatter.dateFormat = "dd/MM/yyyy"
+                if let date = formatter.date(from: dateString) {
+                    parsedDate = date
+                }
+            }
+
+            // 3. Jika masih gagal, coba format tanpa tahun: DD/MM
+            if parsedDate == nil {
+                formatter.dateFormat = "dd/MM"
+                if let dateWithWrongYear = formatter.date(from: dateString) {
+                    // Ambil hari dan bulan, lalu gabungkan dengan tahun saat ini
+                    var components = calendar.dateComponents([.day, .month], from: dateWithWrongYear)
+                    components.year = currentYear
+                    parsedDate = calendar.date(from: components)
+                }
+            }
+            
+            // --- Jaring Pengaman Utama ---
+            guard var finalDate = parsedDate else {
+                // Jika semua format gagal, kembalikan tanggal hari ini
+                return .now
+            }
+            
+            // Cek jika tahun dari hasil parse BUKAN tahun saat ini
+            let parsedYear = calendar.component(.year, from: finalDate)
+            if parsedYear != currentYear {
+                // Paksa ganti tahunnya menjadi tahun saat ini
+                var components = calendar.dateComponents([.day, .month], from: finalDate)
+                components.year = currentYear
+                if let correctedDate = calendar.date(from: components) {
+                    finalDate = correctedDate
+                }
+            }
+            
+            // Jaring pengaman terakhir: jika tanggalnya masih di masa depan
+            // (misalnya, parse 31/12 dan sekarang masih 01/01)
+            if finalDate > Date() {
+                return .now
+            }
+            
+            return finalDate
+        }
 }
